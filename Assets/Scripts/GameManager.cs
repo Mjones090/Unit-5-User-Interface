@@ -32,10 +32,13 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
+       
         isGameActive = true;
         score = 0;
+        spawnRate /= difficulty;
+
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
 
