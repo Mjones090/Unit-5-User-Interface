@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private int score;
     private float spawnRate = 1.0f;
     public Button restartButton;
+    public GameObject titleScreen;
+
    
 
     // Start is called before the first frame update
@@ -36,6 +38,9 @@ public class GameManager : MonoBehaviour
         score = 0;
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
+
+        titleScreen.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
