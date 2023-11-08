@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private int score;
     private float spawnRate = 1.0f;
     public Button restartButton;
+   
 
     // Start is called before the first frame update
     void Start()
