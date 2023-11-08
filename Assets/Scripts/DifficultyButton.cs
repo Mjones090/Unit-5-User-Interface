@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 
 public class DifficultyButton : MonoBehaviour
 {
-
+    private GameManager gameManager;
     private Button button;
 
     // Start is called before the first frame update
@@ -14,7 +15,9 @@ public class DifficultyButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDifficulty);
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -25,5 +28,6 @@ public class DifficultyButton : MonoBehaviour
     void SetDifficulty()
     {
         Debug.Log(gameObject.name + " was clicked");
+        gameManager.StartGame();
     }
 }
